@@ -1,0 +1,67 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+ 
+
+  .con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'img/cta-bg.jpg' %}") fixed center center;
+}
+
+.inner-con {
+    width: 500px;
+    padding: 50px 35px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 40px rgba(70, 130, 180, 0.6); /* Updated color */
+  }
+
+  .con h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #4682B4;
+  }
+
+  .con p {
+    margin-bottom: 10px;
+    color: #000;
+  }
+
+  .con strong {
+    font-weight: bold;
+    color: #4682B4;
+  }
+  #comments-container {
+    margin-top: 20px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+}
+
+</style>
+
+<div class="con">
+  <div class="inner-con">
+    <h1>Détails du projet: {{ projet.libell }}</h1>
+    <p><strong>Description:</strong> {{ projet.description }}</p>
+    {% if projet.date_debut %}
+    <p><strong>Date de début:</strong> {{ projet.date_debut }}</p>
+    {% endif %}
+    {% if projet.date_fin %}
+    <p><strong>Date de fin:</strong> {{ projet.date_fin }}</p>
+    {% endif %}
+    <p><strong>Personnel:</strong> {{ projet.equipe }}</p>
+  </div>
+</div>
+
+
+{% endblock %}

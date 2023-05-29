@@ -1,0 +1,94 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+  body{
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'img/cta-bg.jpg' %}") fixed center center;
+
+  }
+  .custom-form {
+    /* Add your desired styles here */
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Add more styles as needed */
+  }
+  
+  .custom-form h1 {
+    color: #333;
+    font-size: 24px;
+    /* Add more styles as needed */
+  }
+  
+  .custom-form p {
+    color: #666;
+    font-size: 16px;
+    /* Add more styles as needed */
+  }
+ .bb{
+  margin-top:100px;
+ } 
+ .cont {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency as needed */
+}
+
+ .cont strong {
+ color:Black;
+ }
+ .cont h1{
+  color:Black;
+  text-align:center;
+}
+.re{
+  border:solid 1px Black;
+  padding:8px;
+  text-align:center;
+  border-radius:10px;
+ 
+}
+</style>
+<div class="bb">
+<main id="main">
+  
+ 
+  
+
+  <!-- ======= Clients Section ======= -->
+ 
+
+  <section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+  
+      <div class="row">
+        <div class="image col-lg-6" style='background-image: url("{% static 'img/contact-5.jpg' %}");' data-aos="fade-right"></div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="cont">
+          <h1>Contact Details:</h1>
+                    <p><strong>Name:</strong> {{ contact.nom }} {{ contact.prenom }}</p>
+                    <p><strong>Email:</strong> {{ contact.email }}</p>
+                    <p><strong>Telephone:</strong> {{ contact.tel }}</p>
+                    <p><strong>Message:</strong> {{ contact.message }}</p>
+                    <p><strong>Service:</strong> {{ contact.service }}</p>
+                   <div class="re"> <p>Thank you for your message. We have received your information and will get back to you shortly.</p>        </div>
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+  
+    </div>
+  </section><!-- End Features Section -->
+  
+</div>
+</div>
+
+
+{% endblock %}
